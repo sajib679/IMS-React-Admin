@@ -17,7 +17,7 @@ const AllSaleTable = () => {
             <th>Vendor</th>
             <th>Sale Price</th>
             <th>Sale Qty</th>
-            <th>Sale Cost</th>
+            <th>Sale Earn</th>
           </tr>
         }
       >
