@@ -51,6 +51,25 @@ export default (state = initialState, action) => {
       };
       break;
 
+    case productConstants.ADD_PRODUCT_SUCCESS:
+      state = {
+        ...initialState,
+
+        loading: false,
+        products: [action.payload, ...state.products],
+      };
+      break;
+
+    case productConstants.DELETE_PRODUCT_SUCCESS:
+      state = {
+        ...initialState,
+        loading: false,
+        products: [...state.products].filter(
+          (item) => item.id != action.payload
+        ),
+      };
+      break;
+
     default:
       break;
   }

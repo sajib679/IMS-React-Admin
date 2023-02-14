@@ -11,6 +11,7 @@ export const Input = (props) => {
         placeholder={props.placeholder}
         value={props.value}
         onChange={props.onChange}
+        readOnly={props.readOnly}
         multiple
       />
       <Form.Text className="text-muted">{props.errorMessage}</Form.Text>

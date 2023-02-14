@@ -67,6 +67,7 @@ const AddProductModal = ({ modalShow, setModalShow }) => {
         type="text"
         placeholder={`Enter Vendor`}
         value={vendor.username}
+        readOnly={true}
       />
     </Modal>
   );

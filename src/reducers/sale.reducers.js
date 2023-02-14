@@ -34,6 +34,7 @@ export default (state = initialState, action) => {
         ...state,
         loading: false,
         newsale: action.payload,
+        sales: [action.payload, ...state.sales],
       };
       break;
 

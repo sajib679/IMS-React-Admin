@@ -5,7 +5,7 @@ export const getProductsByVendor = (vendor) => {
   return async (dispatch) => {
     dispatch({ type: productConstants.GET_PRODUCT_BY_VENDOR_REQUEST });
     const res = await axios.get(`product/?vendor=${vendor}`);
-    if (res.status === 200) {
+    if (res.status == 200) {
       dispatch({
         type: productConstants.GET_PRODUCT_BY_VENDOR_SUCCESS,
         payload: res.data,
@@ -24,6 +24,10 @@ export const addProduct = (body) => {
     const res = await axios.post(`product/`, body);
     console.log(res);
     if (res.status == 201) {
+      dispatch({
+        type: productConstants.ADD_PRODUCT_SUCCESS,
+        payload: res.data,
+      });
     }
   };
 };
@@ -38,6 +42,12 @@ export const updateProduct = ({ id, form }) => {
 export const deleteProduct = (id) => {
   return async (dispatch) => {
     const res = await axios.delete(`product/${id}/`);
+    if (res.status == 204) {
+      dispatch({
+        type: productConstants.DELETE_PRODUCT_SUCCESS,
+        payload: id,
+      });
+    }
     console.log(res);
   };
 };

@@ -34,6 +34,7 @@ export default (state = initialState, action) => {
         ...state,
         loading: false,
         newpurchase: action.payload,
+        purchases: [action.payload, ...state.purchases],
       };
       break;
 
